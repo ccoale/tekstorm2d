@@ -41,6 +41,48 @@ namespace Tekstorm
 			// Transposes this matrix and returns a reference to itself.
 			Matrix4& Transpose();
 
+			// Transposes the given matrix, returning the transposed matrix.
+			static Matrix4 Transpose(const Matrix& mat);
+
+			// Transposes the given matrix, returning the transposed matrix by reference.
+			static void Transpose(const Matrix& mat, Matrix& result);
+
+			// Lerps this matrix with another and returns a reference to itself.
+			Matrix4& Lerp(const Matrix& other, float weight);
+
+			// Lerps the start matrix with the end matrix given the weight, and returns a new matrix.
+			static Matrix4 Lerp(const Matrix& start, const Matrix& end, float weight);
+
+			// Lerps the start matrix with the end matrix given the weight, and returns a new matrix via reference.
+			static void Lerp(const Matrix& start, const Matrix& end, float weight, Matrix& result);
+
+			// Negates this matrix and returns a reference to itself.
+			Matrix4& Negate();
+
+			// Returns the negation of the given matrix.
+			static Matrix4 Negate(const Matrix4& mat);
+
+			// Returns via reference the negation of the given matrix.
+			static void Negate(const Matrix4& mat, Matrix4& result);
+
+			// Performs a smooth step interpolation on this matrix with another, and returns a reference to itself.
+			Matrix4& SmoothStep(const Matrix& other, float weight);
+
+			// Performs a smooth step interpolation on the two given matrices, and returns a new matrix.
+			static Matrix4 SmoothStep(const Matrix& start, const Matrix& end, float weight);
+
+			// Performs a smooth step interpolation on the two given matrices, and returns a new matrix via reference.
+			static void SmoothStep(const Matrix& start, const Matrix& end, float weight, Matrix& result);
+
+			// Inverts this matrix, returning a reference to itself.
+			Matrix4& Invert();
+
+			// Inverts the given matrix, returning a new matrix.
+			static Matrix4 Invert(const Matrix4& mat);
+
+			// Inverts the given matrix, returning a new matrix via reference.
+			static void Invert(const Matrix4& mat, Matrix4& result);
+
 			// Creates a translation matrix
 			static Matrix CreateTranslation(const Vector3& trans);
 			static void CreateTranslation(const Vector3& trans, Matrix& result);

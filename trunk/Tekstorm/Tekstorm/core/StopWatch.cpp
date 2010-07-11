@@ -10,6 +10,7 @@ namespace Tekstorm
 		{
 			running = false;
 			totalTime = 0;
+			startTime = 0;
 		}
 
 		// De-initializes this instance of StopWatch.
@@ -50,7 +51,10 @@ namespace Tekstorm
 		// Gets the ellapsed time.
 		TEKDECL TimeSpan StopWatch::GetTime() const
 		{
-			return totalTime;
+			if (running)
+				return totalTime + (TimeStamp::GetNow() - startTime);
+			else
+				return totalTime;
 		}
 	}
 }
