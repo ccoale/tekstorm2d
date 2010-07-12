@@ -97,6 +97,39 @@ namespace Tekstorm
 
 			// Creates a transformation matrix
 			static Matrix CreateTransform(const Vector3& trans, const Vector3& scale, const Vector3& rot);
+
+			// Multiplies this matrix by a scalar, returning a new matrix.
+			Matrix operator*(float scalar);
+
+			// Multiplies this matrix by another matrix, returning a new matrix.
+			Matrix operator*(const Matrix& other);
+
+			// Multiplies this matrix by a scalar and assigns this matrix that result.
+			Matrix& operator*=(float scalar);
+
+			// Multiplies this matrix by a matrix and assigns this matrix that result.
+			Matrix& operator*=(const Matrix& other);
+
+			// Adds another matrix to this matrix returning a new matrix.
+			Matrix operator+(const Matrix& other);
+
+			// Adds another matrix to this matrix, returning a reference to this matrix.
+			Matrix& operator+=(const Matrix& other);
+
+			// Subtracts another matrix from this matrix, returning a new matrix.
+			Matrix operator-(const Matrix& other);
+
+			// Subtracts another matrix from this matrix, assigning the new matrix to this matrix.
+			Matrix& operator-=(const Matrix& other);
+
+			// Negates all elements within this matrix.
+			Matrix& operator-();
+
+			// Divides this matrix by a scalar and returns the new matrix.
+			Matrix operator/(float scalar);
+
+			// Divides this matrix by a scalar and returns this matrix.
+			Matrix& operator/=(float scalar);
 		};
 	}
 }

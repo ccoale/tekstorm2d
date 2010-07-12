@@ -213,6 +213,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\math\Matrix.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\math\Matrix.h"
 				>
 			</File>
