@@ -27,9 +27,11 @@ typedef float real;
 /* declare import/export settings */
 #ifdef __BUILD
 #define TEKDECL	__declspec(dllexport)
+#include <d3d9.h>
+#include <d3dx9.h>
+#include <dxerr.h>
 #else
 #define TEKDECL __declspec(dllimport)
 #endif
-
 
 #endif /* _TEKSTORMDECL_H */

@@ -39,64 +39,49 @@ namespace Tekstorm
 				float m41, float m42, float m43, float m44);
 
 			// Transposes this matrix and returns a reference to itself.
-			Matrix4& Transpose();
+			Matrix& Transpose();
 
 			// Transposes the given matrix, returning the transposed matrix.
-			static Matrix4 Transpose(const Matrix& mat);
+			static Matrix Transpose(const Matrix& mat);
 
 			// Transposes the given matrix, returning the transposed matrix by reference.
 			static void Transpose(const Matrix& mat, Matrix& result);
 
 			// Lerps this matrix with another and returns a reference to itself.
-			Matrix4& Lerp(const Matrix& other, float weight);
+			Matrix& Lerp(const Matrix& other, float weight);
 
 			// Lerps the start matrix with the end matrix given the weight, and returns a new matrix.
-			static Matrix4 Lerp(const Matrix& start, const Matrix& end, float weight);
+			static Matrix Lerp(const Matrix& start, const Matrix& end, float weight);
 
 			// Lerps the start matrix with the end matrix given the weight, and returns a new matrix via reference.
 			static void Lerp(const Matrix& start, const Matrix& end, float weight, Matrix& result);
 
 			// Negates this matrix and returns a reference to itself.
-			Matrix4& Negate();
+			Matrix& Negate();
 
 			// Returns the negation of the given matrix.
-			static Matrix4 Negate(const Matrix4& mat);
+			static Matrix Negate(const Matrix& mat);
 
 			// Returns via reference the negation of the given matrix.
-			static void Negate(const Matrix4& mat, Matrix4& result);
+			static void Negate(const Matrix& mat, Matrix& result);
 
 			// Performs a smooth step interpolation on this matrix with another, and returns a reference to itself.
-			Matrix4& SmoothStep(const Matrix& other, float weight);
+			Matrix& SmoothStep(const Matrix& other, float weight);
 
 			// Performs a smooth step interpolation on the two given matrices, and returns a new matrix.
-			static Matrix4 SmoothStep(const Matrix& start, const Matrix& end, float weight);
+			static Matrix SmoothStep(const Matrix& start, const Matrix& end, float weight);
 
 			// Performs a smooth step interpolation on the two given matrices, and returns a new matrix via reference.
 			static void SmoothStep(const Matrix& start, const Matrix& end, float weight, Matrix& result);
 
 			// Inverts this matrix, returning a reference to itself.
-			Matrix4& Invert();
+			Matrix& Invert();
 
 			// Inverts the given matrix, returning a new matrix.
-			static Matrix4 Invert(const Matrix4& mat);
+			static Matrix Invert(const Matrix& mat);
 
 			// Inverts the given matrix, returning a new matrix via reference.
-			static void Invert(const Matrix4& mat, Matrix4& result);
-
-			// Creates a translation matrix
-			static Matrix CreateTranslation(const Vector3& trans);
-			static void CreateTranslation(const Vector3& trans, Matrix& result);
-
-			// Creates a rotation matrix
-			static Matrix CreateRotation(const Vector3& rot);
-			static void CreateRotation(const Vector3& rot, Matrix& result);
-
-			// Creates a scaling matrix
-			static Matrix CreateScaling(const Vector3& scale);
-			static void CreateScaling(const Vector3& scale, Matrix& result);
-
-			// Creates a transformation matrix
-			static Matrix CreateTransform(const Vector3& trans, const Vector3& scale, const Vector3& rot);
+			static void Invert(const Matrix& mat, Matrix& result);
 
 			// Multiplies this matrix by a scalar, returning a new matrix.
 			Matrix operator*(float scalar);
