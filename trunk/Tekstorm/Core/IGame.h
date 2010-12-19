@@ -4,6 +4,7 @@
 #include "../Graphics/IGraphics.h"
 #include "../Math/Color4.h"
 #include "../Core/TimeSpan.h"
+#include "../Core/ContentManager.h"
 
 namespace Tekstorm
 {
@@ -21,6 +22,7 @@ namespace Tekstorm
 			Tekstorm::Graphics::IGraphics *Graphics;
 			Tekstorm::Core::TimeStamp LastDrawCall; //
 			Tekstorm::Core::TimeStamp LastUpdateCall; // the timestamp when the last call to Update was made.
+			Tekstorm::Core::ContentManager *MainContent; // the main content manager
 
 			IGame();
 			~IGame();

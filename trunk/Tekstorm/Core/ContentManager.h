@@ -42,8 +42,17 @@ namespace Tekstorm
 			template <class _Tx> _Tx *Load(const char *szFilePath)
 			{
 				_Tx *pRes = new _Tx();
-				if (FAILED(pRes->LoadFromFile(szFilePath)))
+				if (! pRes)
+				{
+					TEKTHROW(E_OUTOFMEMORY);
 					return NULL;
+				}
+
+				if (FAILED(pRes->LoadFromFile(graph, szFilePath)))
+				{
+					TEKTHROW(E_FAIL);
+					return NULL;
+				}
 
 				ResourceInfo info;
 				info.bLoaded = true;
@@ -58,8 +67,17 @@ namespace Tekstorm
 			template <class _Ty> _Ty *Load(const char *pFileData, unsigned int size)
 			{
 				_Tx *pRes = new _Tx();
-				if (FAILED(pRes->LoadFromMemory(pFileData, size)))
+				if (! pRes)
+				{
+					TEKTHROW(E_OUTOFMEMORY);
 					return NULL;
+				}
+
+				if (FAILED(pRes->LoadFromMemory(graph, pFileData, size)))
+				{
+					TEKTHROW(E_FAIL);
+					return NULL;
+				}
 
 				ResourceInfo info;
 				info.bLoaded = true;
@@ -85,10 +103,10 @@ namespace Tekstorm
 			HRESULT ReloadAll();
 
 			// Returns the current reference count of this object.
-			unsigned int GetRefCount();
+			virtual unsigned int GetRefCount();
 
 			// Returns the underlying handle to the resource that is to be disposed.
-			void *GetHandle() = 0;
+			void *GetHandle();
 
 			// Releases any resources that were used by this object.
 			// If all goes as planned, S_OK is returned.

@@ -11,6 +11,10 @@ namespace Tekstorm
 
 		IGame::~IGame()
 		{
+			if (MainContent)
+				delete MainContent;
+
+			MainContent = NULL;
 		}
 
 		// Used to initialize any game code
@@ -45,7 +49,6 @@ namespace Tekstorm
 		{
 			// clear the screen to cornflower blue
 			Graphics->Clear(Tekstorm::Math::Color4(1.0f, 0.39f, 0.58f, 0.93f));
-			Graphics->Present();
 
 			return true;
 		}
@@ -83,6 +86,8 @@ namespace Tekstorm
 			if (! Graphics)
 				return false;
 
+			MainContent = new ContentManager(Graphics);
+
 			Initialize();
 			OnLoad();
 			bool isRunning = true;
@@ -109,13 +114,23 @@ namespace Tekstorm
 				isRunning = Update(now - LastUpdateCall);
 				LastUpdateCall = now;
 				diff = TimeStamp::GetNow() - now;
-				totalTime += ceil(diff.GetRealMilliseconds());
+				totalTime += (unsigned int)ceil(diff.GetRealMilliseconds());
 
 				now = TimeStamp::GetNow();
+				Graphics->Begin();
 				isRunning = Draw(now - LastDrawCall);
+				Graphics->End();
+				while (Graphics->Present() == D3DERR_DEVICELOST)
+				{
+					MainContent->UnloadAll();
+					Graphics->Reset();
+					MainContent->ReloadAll();
+				}
+
 				LastDrawCall = now;
+				
 				diff = TimeStamp::GetNow() - now;
-				totalTime += ceil(diff.GetRealMilliseconds());
+				totalTime += (unsigned int)ceil(diff.GetRealMilliseconds());
 
 				now = TimeStamp::GetNow();
 				if (totalTime < frameTime)
@@ -123,9 +138,11 @@ namespace Tekstorm
 					IdleWorker(frameTime - totalTime);
 				}
 				diff = TimeStamp::GetNow() - now;
-				totalTime += ceil(diff.GetRealMilliseconds());
+				totalTime += (unsigned int)ceil(diff.GetRealMilliseconds());
 				FPS = 1000.0f / (float)totalTime;
 			}
+
+			return true;
 		}
 
 		// sets the desired fps (the value must be between 0 and 500)
@@ -135,7 +152,7 @@ namespace Tekstorm
 				return; // don't waste time
 
 			DesiredFPS = fps;
-			msPerFrame = (unsigned int)(1000.0 / (double)DesiredFPS);
+			msPerFrame = (1000.0f / (float)DesiredFPS);
 		}
 
 		// calculates the -real- FPS (of the previous frame)

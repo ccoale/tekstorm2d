@@ -12,6 +12,12 @@ using namespace Math;
 class MyGame : public IGame
 {
 public:
+	bool OnLoad()
+	{
+		
+		return true;
+	}
+
 	bool Update(const TimeSpan &time)
 	{
 		printf("Update() -- %f\n", time.GetRealMilliseconds());
@@ -24,7 +30,7 @@ int main()
 	TimeConstants::InitConstants();
 
 	MyGame *myGame = new MyGame();
-	myGame->Run("Hello World", 640, 480, 30);
+	myGame->Run("Hello World", 640, 480, 60);
 
 	return 0;
 }

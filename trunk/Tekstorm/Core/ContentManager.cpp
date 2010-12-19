@@ -12,6 +12,7 @@ namespace Tekstorm
 
 		ContentManager::ContentManager(const ContentManager& other)
 		{
+			// attempt to copy the other graph
 			graph = other.graph;
 
 			std::list<ResourceInfo>::const_iterator it = other.resources.begin();
@@ -19,13 +20,20 @@ namespace Tekstorm
 			{
 				ResourceInfo info;
 				info = *it;
-				info.pRes = info.pRes->Copy();
+				if (info.pRes)
+					info.pRes = info.pRes->Copy();
+
+				resources.push_back(info);
 			}
 		}
 
 		ContentManager::~ContentManager()
 		{
-			Dispose();
+			HRESULT hr = Dispose();
+			if (FAILED(hr))
+			{
+				TEKTHROW(hr);
+			}
 		}
 
 		// Adds a resource to this list to be managed.
@@ -33,6 +41,12 @@ namespace Tekstorm
 		// REMOVING IT FROM THIS MANAGER.
 		HRESULT ContentManager::AddResource(IResource *pRes)
 		{
+			if (! pRes)
+			{
+				TEKTHROW(E_INVALIDARG);
+				return E_INVALIDARG;
+			}
+
 			ResourceInfo info;
 			info.bLoaded = true;
 			info.bReload = pRes->CheckReload();
@@ -60,10 +74,15 @@ namespace Tekstorm
 		// Unloads all resources in this ContentManager (does not destroy them)
 		HRESULT ContentManager::UnloadAll()
 		{
+			HRESULT hr;
 			std::list<ResourceInfo>::iterator it = resources.begin();
 			for (; it != resources.end(); it++)
 			{
-				(*it).pRes->Unload();
+				hr = (*it).pRes->Unload();
+				if (FAILED(hr)) {
+					TEKTHROW(hr);
+					return hr;
+				}
 			}
 
 			return S_OK;
@@ -72,10 +91,15 @@ namespace Tekstorm
 		// Reloads all resources in this ContentManager
 		HRESULT ContentManager::ReloadAll()
 		{
+			HRESULT hr;
 			std::list<ResourceInfo>::iterator it = resources.begin();
 			for (; it != resources.end(); it++)
 			{
-				(*it).pRes->Load();
+				hr = (*it).pRes->Load();
+				if (FAILED(hr)) {
+					TEKTHROW(hr);
+					return hr;
+				}
 			}
 
 			return S_OK;
@@ -100,8 +124,12 @@ namespace Tekstorm
 			std::list<ResourceInfo>::iterator it = resources.begin();
 			for (; it != resources.end(); it++)
 			{
-				(*it).pRes->Unload();
-				delete (*it).pRes;
+				if ((*it).pRes)
+				{
+					(*it).pRes->Unload();
+					delete (*it).pRes;
+				}
+
 				resources.erase(it);
 			}
 

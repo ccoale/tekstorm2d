@@ -18,6 +18,9 @@ namespace Tekstorm
 		class IResource : public IDisposable
 		{
 		public:
+			IResource() { }
+			virtual IResource() { }
+
 			// This method is called when the resource needs to be loaded for the first time, by file on disk.
 			virtual HRESULT LoadFromFile(Tekstorm::Graphics::IGraphics *pGraph, const char *szFile) = 0;
 
