@@ -169,6 +169,14 @@
 			Name="Core"
 			>
 			<File
+				RelativePath=".\Core\ContentManager.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Core\ContentManager.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Core\DisplayMode.h"
 				>
 			</File>
@@ -198,6 +206,10 @@
 			</File>
 			<File
 				RelativePath=".\Core\IGame.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Core\IResource.h"
 				>
 			</File>
 			<File

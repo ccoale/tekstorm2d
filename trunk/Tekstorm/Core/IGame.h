@@ -66,9 +66,12 @@ namespace Tekstorm
 			// sets the desired fps (the value must be between 0 and 500)
 			virtual void SetDesiredFPS(unsigned int fps);
 
+			// calculates the -real- FPS (of the previous frame)
+			virtual float GetRealFPS();
+
 			// idle worker
 			// 'ms' is the number of extra ms of time this IdleWorker function may use.
-			virtual void IdleWorker(float ms);
+			virtual void IdleWorker(unsigned int ms);
 		};
 	}
 }

@@ -45,6 +45,7 @@ namespace Tekstorm
 		{
 			// clear the screen to cornflower blue
 			Graphics->Clear(Tekstorm::Math::Color4(1.0f, 0.39f, 0.58f, 0.93f));
+			Graphics->Present();
 
 			return true;
 		}
@@ -75,7 +76,7 @@ namespace Tekstorm
 			mode.Format = PF_DEFAULT;
 			Device->FindDisplayMatch(&mode); // find the closest match for the display mode given
 
-			DesiredFPS = desiredFps;
+			SetDesiredFPS(desiredFps);
 
 			// create the graphics device
 			Graphics = Device->CreateDevice(mode, caption, windowed, vsync, multiSampleType, msgHandler);
@@ -87,10 +88,43 @@ namespace Tekstorm
 			bool isRunning = true;
 			LastDrawCall = TimeStamp::GetNow();
 			LastUpdateCall = TimeStamp::GetNow();
+			// DesiredFPS = frames per second
+			// 1/DesiredFPS = seconds per frame
+			// SPF * 1000.0f = milliseconds per frame
+			unsigned int frameTime = 0;
+			unsigned int totalTime = 0;
+			TimeStamp startTime;
+			TimeSpan diff;
+			unsigned int diffMs = 0;
+			bool skipUpdate = false;
+			bool skipDraw = false;
+			frameTime = (unsigned int)msPerFrame;
 
 			while (isRunning)
 			{
-				
+				totalTime = 0;
+				Graphics->Update();
+
+				TimeStamp now = TimeStamp::GetNow();
+				isRunning = Update(now - LastUpdateCall);
+				LastUpdateCall = now;
+				diff = TimeStamp::GetNow() - now;
+				totalTime += ceil(diff.GetRealMilliseconds());
+
+				now = TimeStamp::GetNow();
+				isRunning = Draw(now - LastDrawCall);
+				LastDrawCall = now;
+				diff = TimeStamp::GetNow() - now;
+				totalTime += ceil(diff.GetRealMilliseconds());
+
+				now = TimeStamp::GetNow();
+				if (totalTime < frameTime)
+				{
+					IdleWorker(frameTime - totalTime);
+				}
+				diff = TimeStamp::GetNow() - now;
+				totalTime += ceil(diff.GetRealMilliseconds());
+				FPS = 1000.0f / (float)totalTime;
 			}
 		}
 
@@ -102,6 +136,23 @@ namespace Tekstorm
 
 			DesiredFPS = fps;
 			msPerFrame = (unsigned int)(1000.0 / (double)DesiredFPS);
+		}
+
+		// calculates the -real- FPS (of the previous frame)
+		float IGame::GetRealFPS()
+		{
+			return FPS;
+		}
+
+		// idle worker
+		// 'ms' is the number of extra ms of time this IdleWorker function may use.
+		void IGame::IdleWorker(unsigned int ms)
+		{
+			for (unsigned int i = 0; i < ms; i += 10)
+			{
+				Graphics->Update();
+				Sleep(10);
+			}
 		}
 	}
 }
