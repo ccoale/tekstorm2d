@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Math">
+      <UniqueIdentifier>{5ec4d16e-d98f-48a1-a0c5-6046f776358e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IO">
+      <UniqueIdentifier>{da4c69e1-cbe1-449c-ad61-1074858d2dee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Net">
+      <UniqueIdentifier>{759a856a-20aa-4e65-be82-ed7ca423000a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{58b3a81d-e72b-48f4-ab97-931eef0675d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripting">
+      <UniqueIdentifier>{7bb03854-3f59-40a6-a1f0-68294e3a678b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{266f8dd8-8f83-42e5-b19d-175ae9181e93}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BuildConf.h" />
+    <ClInclude Include="CommonUtils.h" />
+    <ClInclude Include="Math\Vector3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Color4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Color3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Quaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\IStream.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\SeekOrigin.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="IO\MemoryStream.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\FileNotFoundException.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="GC.h" />
+    <ClInclude Include="Net\Socket.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\AddressFamily.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\ProtocolType.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\SocketType.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\IPAddress.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\GraphicsConf.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\IWindow.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\ScreenPoint.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\ScreenSize.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\MouseState.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripting\angelscript.h">
+      <Filter>Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="IResource.h" />
+    <ClInclude Include="Sound\SoundConf.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\FMODSoundEffect.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\ISoundEffect.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\ISoundEffectInstance.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\ISoundManager.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\FMODSoundManager.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\FMODSoundEffectInstance.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="TekEngine.h" />
+    <ClInclude Include="IO\Console.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="IO\StandardStream.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Math\Vector2.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Vector3.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Vector4.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\GraphicsConf.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\MouseState.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\FMODSoundManager.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonUtils.cpp" />
+    <ClCompile Include="Sound\FMODSoundEffect.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\FMODSoundEffectInstance.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\StandardStream.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="IO\Console.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Color3.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

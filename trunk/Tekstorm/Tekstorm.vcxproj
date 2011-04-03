@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{79F151F5-671C-4CD5-A444-34EE6560CB35}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Tekstorm</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Chris\Desktop\Tekstorm\Tekstorm\Sound\FMOD;C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Lib\x86;C:\Users\Chris\Desktop\Tekstorm\Tekstorm\Scripting;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>C:\Users\Chris\Desktop\Tekstorm\Tekstorm\Scripting;C:\Users\Chris\Desktop\Tekstorm\Tekstorm\Sound\FMOD;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d11.lib;angelscriptd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>angelscript.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="BuildConf.h" />
+    <ClInclude Include="CommonUtils.h" />
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="GC.h" />
+    <ClInclude Include="Graphics\GraphicsConf.h" />
+    <ClInclude Include="Graphics\IWindow.h" />
+    <ClInclude Include="Graphics\ScreenPoint.h" />
+    <ClInclude Include="Graphics\ScreenSize.h" />
+    <ClInclude Include="IO\Console.h" />
+    <ClInclude Include="IO\FileNotFoundException.h" />
+    <ClInclude Include="IO\IStream.h" />
+    <ClInclude Include="IO\MemoryStream.h" />
+    <ClInclude Include="IO\MouseState.h" />
+    <ClInclude Include="IO\SeekOrigin.h" />
+    <ClInclude Include="IO\StandardStream.h" />
+    <ClInclude Include="IResource.h" />
+    <ClInclude Include="Math\Color3.h" />
+    <ClInclude Include="Math\Color4.h" />
+    <ClInclude Include="Math\Quaternion.h" />
+    <ClInclude Include="Math\Vector2.h" />
+    <ClInclude Include="Math\Vector3.h" />
+    <ClInclude Include="Math\Vector4.h" />
+    <ClInclude Include="Net\AddressFamily.h" />
+    <ClInclude Include="Net\IPAddress.h" />
+    <ClInclude Include="Net\ProtocolType.h" />
+    <ClInclude Include="Net\Socket.h" />
+    <ClInclude Include="Net\SocketType.h" />
+    <ClInclude Include="Scripting\angelscript.h" />
+    <ClInclude Include="Sound\FMODSoundEffect.h" />
+    <ClInclude Include="Sound\FMODSoundEffectInstance.h" />
+    <ClInclude Include="Sound\FMODSoundManager.h" />
+    <ClInclude Include="Sound\ISoundEffect.h" />
+    <ClInclude Include="Sound\ISoundEffectInstance.h" />
+    <ClInclude Include="Sound\ISoundManager.h" />
+    <ClInclude Include="Sound\SoundConf.h" />
+    <ClInclude Include="TekEngine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CommonUtils.cpp" />
+    <ClCompile Include="Graphics\GraphicsConf.cpp" />
+    <ClCompile Include="IO\Console.cpp" />
+    <ClCompile Include="IO\MouseState.cpp" />
+    <ClCompile Include="IO\StandardStream.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Math\Color3.cpp" />
+    <ClCompile Include="Math\Vector2.cpp" />
+    <ClCompile Include="Math\Vector3.cpp" />
+    <ClCompile Include="Math\Vector4.cpp" />
+    <ClCompile Include="Sound\FMODSoundEffect.cpp" />
+    <ClCompile Include="Sound\FMODSoundEffectInstance.cpp" />
+    <ClCompile Include="Sound\FMODSoundManager.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
