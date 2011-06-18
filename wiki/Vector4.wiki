@@ -1,0 +1,7 @@
+#summary A class that represents a 4-dimensional vector.
+#labels Vector4,Math
+
+= Introduction =
+
+
+= Details =
