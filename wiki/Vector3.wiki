@@ -1,0 +1,8 @@
+#summary A class that represents a 3-dimensional vector.
+#labels Vector3,Math
+
+= Introduction =
+
+
+
+= Details =
