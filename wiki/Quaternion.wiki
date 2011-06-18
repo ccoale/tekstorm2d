@@ -1,0 +1,7 @@
+#summary A class that represents a quaternion.
+#labels Quaternion,Math
+
+= Introduction =
+
+
+= Details =
