@@ -20,4 +20,13 @@
       <UniqueIdentifier>{7b5a1416-3610-40f2-a587-5d8215bae89b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\graphics\glconfig.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\graphics\d3dconfig.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\tekconfig.h" />
+  </ItemGroup>
 </Project>
