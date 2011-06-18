@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="math">
+      <UniqueIdentifier>{4bf228e0-156f-4d5a-9900-c3e3113d2af5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="io">
+      <UniqueIdentifier>{c30ccce8-35a9-4083-8f2d-b8a09ac6e851}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="graphics">
+      <UniqueIdentifier>{087f06f4-5488-47c5-a558-30a78d98cfda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="net">
+      <UniqueIdentifier>{9a2e9490-252b-40ab-a360-7ca1b3a988be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripting">
+      <UniqueIdentifier>{cbd0f8c3-b90c-4423-9a03-f263f0f9dca6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio">
+      <UniqueIdentifier>{7b5a1416-3610-40f2-a587-5d8215bae89b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
