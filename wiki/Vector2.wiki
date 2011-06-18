@@ -1,0 +1,8 @@
+#summary A class that represents a 2-dimensional vector.
+#labels Vector2,Math
+
+= Introduction =
+
+
+
+= Details =
