@@ -76,7 +76,17 @@
   <ItemGroup>
     <ClInclude Include="..\graphics\d3dconfig.h" />
     <ClInclude Include="..\graphics\glconfig.h" />
+    <ClInclude Include="..\math\Matrix3.h" />
+    <ClInclude Include="..\math\Matrix4.h" />
+    <ClInclude Include="..\math\Quaternion.h" />
+    <ClInclude Include="..\math\Vector2.h" />
+    <ClInclude Include="..\math\Vector3.h" />
+    <ClInclude Include="..\math\Vector4.h" />
     <ClInclude Include="..\tekconfig.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\math\Vector2.cpp" />
+    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
