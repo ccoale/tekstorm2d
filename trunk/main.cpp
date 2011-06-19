@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../math/Vector2.h"
+#include "math/Vector2.h"
 using namespace Tekstorm;
 using namespace Math;
 
