@@ -55,5 +55,8 @@
     <ClCompile Include="..\Math\Vector3.cpp">
       <Filter>math</Filter>
     </ClCompile>
+    <ClCompile Include="..\Math\Vector4.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
