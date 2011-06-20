@@ -1,0 +1,6 @@
+#summary This wiki article contains information about the Color4 class.
+#labels Color4,Math
+
+= Introduction =
+
+Under Construction
