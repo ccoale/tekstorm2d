@@ -1,0 +1,5 @@
+#summary This wiki article has information about the Color3 class.
+#labels Color3,math
+
+= Introduction =
+Under Constructions
