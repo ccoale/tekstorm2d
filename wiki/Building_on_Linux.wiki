@@ -8,9 +8,9 @@ Tekstorm2D is a cross-platform game engine, and as such, it has build scripts fo
 
 = Requirements =
 
-* svn client
-* g++ and make
-* opengl libraries (gl, glu, glaux, freeglut)
+  * svn client
+  * g++ and make
+  * opengl libraries (gl, glu, glaux, freeglut)
 
 = Grabbing the source =
 First, before we can compile, we obviously have to grab the source. This can be done with SVN.
