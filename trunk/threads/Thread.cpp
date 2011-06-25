@@ -94,7 +94,7 @@ namespace Tekstorm
 			TerminateThread((HANDLE)hThreadHandle, 0);
 			CloseHandle((HANDLE)hThreadHandle);
 #else
-			pthread_abort((pthread_t)hThreadHandle);
+			pthread_cancel((pthread_t)hThreadHandle);
 #endif
 		}
 	}
