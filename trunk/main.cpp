@@ -1,12 +1,32 @@
 #include <iostream>
-#include "math/Vector2.h"
+#include "threads/Mutex.h"
+#include "threads/Thread.h"
 using namespace Tekstorm;
-using namespace Math;
+using namespace Threads;
+
+
+void MySecondThread(ThreadStartArgs *args)
+{
+	for (int i = 0; i < 5; i++)
+		std::cout << i << "\n";
+}
+
+void MyThread(ThreadStartArgs *args)
+{
+	for (int i = 0; i < 5; i++) {
+		std::cout << i << "\n";
+	}
+}
 
 int main()
 {
-	Vector2 pos(cos(3.14159 / 4), sin(3.14159 / 4));
-	printf("(%f, %f)\n", pos.X, pos.Y);
-	Vector2 res = Vector2::Reflect(pos, Vector2::UnitY);
-	printf("(%f, %f)\n", res.X, res.Y);
+	Thread thread(MyThread);
+	Thread thread2(MySecondThread);
+	thread2.Start();
+	thread.Start();
+	std::cout << "test";
+
+	while (true) ;
+	
+	std::cout << "We made it!";
 }

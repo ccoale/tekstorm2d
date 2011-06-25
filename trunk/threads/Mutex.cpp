@@ -23,7 +23,8 @@ namespace Tekstorm
 			hMutexHandle = (TEKHANDLE)pCritHandle;
 #elif defined(TEKSTORM_THREADS_PTHREADS)
 			pthread_mutex_t *pCritHandle = new pthread_mutex_t;
-			*pCritHandle = PTHREAD_MUTEX_INITIALIZER;
+			pthread_mutex_init(pCritHandle, NULL);
+			hMutexHandle = (TEKHANDLE)pCritHandle;
 #endif
 		}
 
@@ -46,10 +47,11 @@ namespace Tekstorm
 
 #if defined(TEKSTORM_THREADS_WINDOWS)
 				DeleteCriticalSection((LPCRITICAL_SECTION) hMutexHandle);
+				delete (LPCRITICAL_SECTION)hMutexHandle;
 #elif defined(TEKSTORM_THREADS_PTHREADS)
 				pthread_mutex_destroy((pthread_mutex_t *) hMutexHandle);
+				delete (pthread_mutex_t *)hMutexHandle;
 #endif
-				delete hMutexHandle;
 			}
 		}
 
