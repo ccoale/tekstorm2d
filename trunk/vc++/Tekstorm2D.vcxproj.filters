@@ -19,6 +19,9 @@
     <Filter Include="audio">
       <UniqueIdentifier>{7b5a1416-3610-40f2-a587-5d8215bae89b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="threads">
+      <UniqueIdentifier>{4b9bda74-d09b-474d-83b7-d7db994d0d3b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\graphics\glconfig.h">
@@ -52,6 +55,12 @@
     <ClInclude Include="..\Math\Color4.h">
       <Filter>math</Filter>
     </ClInclude>
+    <ClInclude Include="..\io\IStream.h">
+      <Filter>io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\threads\Mutex.h">
+      <Filter>threads</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\math\Vector2.cpp">
@@ -69,6 +78,12 @@
     </ClCompile>
     <ClCompile Include="..\Math\Color4.cpp">
       <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\io\IStream.cpp">
+      <Filter>io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\threads\Mutex.cpp">
+      <Filter>threads</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

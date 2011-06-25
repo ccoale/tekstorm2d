@@ -39,4 +39,13 @@
 
 #define TEKAPI
 
+#if defined (_MSC_VER)
+#	define TEKSTORM_OS_WIN32	1
+#endif
+
+///
+/// Generic handle type
+///
+typedef void *TEKHANDLE;
+
 #endif /* _TEKCONFIG_H */

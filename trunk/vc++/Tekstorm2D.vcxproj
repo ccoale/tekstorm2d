@@ -76,6 +76,7 @@
   <ItemGroup>
     <ClInclude Include="..\graphics\d3dconfig.h" />
     <ClInclude Include="..\graphics\glconfig.h" />
+    <ClInclude Include="..\io\IStream.h" />
     <ClInclude Include="..\Math\Color3.h" />
     <ClInclude Include="..\Math\Color4.h" />
     <ClInclude Include="..\math\Matrix3.h" />
@@ -85,13 +86,16 @@
     <ClInclude Include="..\math\Vector3.h" />
     <ClInclude Include="..\math\Vector4.h" />
     <ClInclude Include="..\tekconfig.h" />
+    <ClInclude Include="..\threads\Mutex.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\io\IStream.cpp" />
     <ClCompile Include="..\Math\Color3.cpp" />
     <ClCompile Include="..\Math\Color4.cpp" />
     <ClCompile Include="..\math\Vector2.cpp" />
     <ClCompile Include="..\Math\Vector3.cpp" />
     <ClCompile Include="..\Math\Vector4.cpp" />
+    <ClCompile Include="..\threads\Mutex.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
