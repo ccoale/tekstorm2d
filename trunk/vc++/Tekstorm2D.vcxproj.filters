@@ -61,6 +61,9 @@
     <ClInclude Include="..\threads\Mutex.h">
       <Filter>threads</Filter>
     </ClInclude>
+    <ClInclude Include="..\Threads\Thread.h">
+      <Filter>threads</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\math\Vector2.cpp">
@@ -83,6 +86,9 @@
       <Filter>io</Filter>
     </ClCompile>
     <ClCompile Include="..\threads\Mutex.cpp">
+      <Filter>threads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Threads\Thread.cpp">
       <Filter>threads</Filter>
     </ClCompile>
   </ItemGroup>
