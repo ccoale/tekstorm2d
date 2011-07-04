@@ -13,4 +13,4 @@ all: math threads
 	$(CC) main.cpp $(LFLAGS) $(ALL_OBJECTS) -o tekstorm
 
 clean:
-	rm ./bin/*.o
+	rm -f ./bin/*.o

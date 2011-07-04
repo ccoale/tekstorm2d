@@ -18,9 +18,9 @@ namespace Tekstorm
 		Mutex::Mutex()
 		{
 #if defined(TEKSTORM_THREADS_WINDOWS)
-			CRITICAL_SECTION *pCritHandle = new CRITICAL_SECTION;
-			InitializeCriticalSection(pCritHandle);
-			hMutexHandle = (TEKHANDLE)pCritHandle;
+			//CRITICAL_SECTION *pCritHandle = new CRITICAL_SECTION;
+			//InitializeCriticalSection(pCritHandle);
+			hMutexHandle = (TEKHANDLE)CreateMutex(NULL, false, NULL);
 #elif defined(TEKSTORM_THREADS_PTHREADS)
 			pthread_mutex_t *pCritHandle = new pthread_mutex_t;
 			pthread_mutex_init(pCritHandle, NULL);

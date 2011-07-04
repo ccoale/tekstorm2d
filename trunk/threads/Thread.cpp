@@ -24,13 +24,13 @@ namespace Tekstorm
 		/// Initializes a new instance of Thread.
 		/// if start is true, then the thread is started immediately.
 		///
-		Thread::Thread(ThreadStart func, bool start)
+		Thread::Thread(ThreadStart func, void *data, bool start)
 		{
 			if (func == NULL)
 				return;
 
 			pThreadArgs = new ThreadStartArgs;
-			pThreadArgs->UserData = NULL;
+			pThreadArgs->UserData = data;
 			pThreadArgs->pHandle = this;
 			pThreadArgs->pThreadFunc = func;
 

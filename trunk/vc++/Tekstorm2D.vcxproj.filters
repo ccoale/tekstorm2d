@@ -64,6 +64,12 @@
     <ClInclude Include="..\Threads\Thread.h">
       <Filter>threads</Filter>
     </ClInclude>
+    <ClInclude Include="..\Threads\Async.h">
+      <Filter>threads</Filter>
+    </ClInclude>
+    <ClInclude Include="..\io\FileStream.h">
+      <Filter>io</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\math\Vector2.cpp">
@@ -89,6 +95,9 @@
       <Filter>threads</Filter>
     </ClCompile>
     <ClCompile Include="..\Threads\Thread.cpp">
+      <Filter>threads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Threads\Async.cpp">
       <Filter>threads</Filter>
     </ClCompile>
   </ItemGroup>

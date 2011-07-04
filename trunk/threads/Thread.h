@@ -67,7 +67,7 @@ namespace Tekstorm
 			/// Initializes a new instance of Thread.
 			/// if start is true, then the thread is started immediately.
 			///
-			Thread(ThreadStart func, bool start=false);
+			Thread(ThreadStart func, void *data = NULL, bool start=false);
 
 			///
 			/// Aborts this thread, destroying the handle.
