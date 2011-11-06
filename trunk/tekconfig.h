@@ -22,7 +22,7 @@
 **	- TEKSTORM_OS_WIN64			- 64-bit windows
 
 ** TEKSTORM_MATH_*
-**	- TEKSTORM_MATH_ACCURATE	- use 64-bit floating-point numbers for calculations (slower)
+**	- TEKSTORM_MATH_ACCURATE	- use 64-bit floating-point numbers for calculations (slower)...
 */
 #pragma once
 #ifndef _TEKCONFIG_H
