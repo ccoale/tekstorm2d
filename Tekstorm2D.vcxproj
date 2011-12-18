@@ -39,6 +39,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>.\Bin\$(Configuration)\</OutDir>
+    <IntDir>.\Bin\$(Configuration)\Temp\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -74,6 +76,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="core\TimeConstants.cpp" />
+    <ClCompile Include="core\TimeSpan.cpp" />
+    <ClCompile Include="core\TimeStamp.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="math\Color3.cpp" />
+    <ClCompile Include="math\Color4.cpp" />
+    <ClCompile Include="math\Vector2.cpp" />
+    <ClCompile Include="math\Vector3.cpp" />
+    <ClCompile Include="math\Vector4.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="core\TimeConstants.h" />
+    <ClInclude Include="core\TimeSpan.h" />
+    <ClInclude Include="core\TimeStamp.h" />
+    <ClInclude Include="IO\IStream.h" />
+    <ClInclude Include="math\Color3.h" />
+    <ClInclude Include="math\Color4.h" />
+    <ClInclude Include="math\Matrix3.h" />
+    <ClInclude Include="math\Matrix4.h" />
+    <ClInclude Include="math\Quaternion.h" />
+    <ClInclude Include="math\Vector2.h" />
+    <ClInclude Include="math\Vector3.h" />
+    <ClInclude Include="math\Vector4.h" />
+    <ClInclude Include="tekconfig.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
