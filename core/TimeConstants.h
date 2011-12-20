@@ -3,6 +3,8 @@
 
 namespace Tekstorm
 {
+	namespace Core
+	{
 		// This class is used to store static time constants (such as frequency, invfrequency, etc.)
 		class TimeConstants
 		{
@@ -13,6 +15,7 @@ namespace Tekstorm
 
 			static void InitConstants();
 		};
+	}
 }
 
 #endif /* _TEKSTORM_TIMECONSTANTS_H */

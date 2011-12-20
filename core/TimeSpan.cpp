@@ -3,6 +3,8 @@
 
 namespace Tekstorm
 {
+	namespace Core
+	{
 		// Initializes a new instance of TimeSpan and sets Raw to the value indicated in val.
 		TimeSpan::TimeSpan(__int64 val)
 		{
@@ -117,4 +119,5 @@ namespace Tekstorm
 
 			return *this;
 		}
+	}
 }
