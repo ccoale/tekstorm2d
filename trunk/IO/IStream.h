@@ -40,7 +40,7 @@ namespace Tekstorm
 			/// current stream pointer forward by 1 byte.
 			/// The result is the read byte.
 			///
-			virtual int32_t ReadByte() const = 0;
+			virtual int32_t ReadByte()  = 0;
 
 			///
 			/// Reads an array of bytes from the stream, and advances the
@@ -66,7 +66,7 @@ namespace Tekstorm
 			/// count - the number of bytes to write to the stream
 			/// offset - the offset into the source buffer to begin reading from
 			///
-			virtual void Write(const char *pSource, int32_t count, int32_t offset = 0) = 0;
+			virtual int32_t Write(const char *pSource, int32_t count, int32_t offset = 0) = 0;
 
 			///
 			/// Flushes this stream.
@@ -77,6 +77,11 @@ namespace Tekstorm
 			/// Closes this stream.
 			///
 			virtual void Close() = 0;
+
+			///
+			/// Sets the current index into the stream.
+			///
+			virtual void Seek(int32_t value, int32_t offset = SEEK_SET) = 0;
 		};
 	}
 }

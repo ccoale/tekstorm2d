@@ -41,6 +41,8 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>.\Bin\$(Configuration)\</OutDir>
     <IntDir>.\Bin\$(Configuration)\Temp\</IntDir>
+    <IncludePath>C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -79,18 +81,31 @@
     <ClCompile Include="core\TimeConstants.cpp" />
     <ClCompile Include="core\TimeSpan.cpp" />
     <ClCompile Include="core\TimeStamp.cpp" />
+    <ClCompile Include="Graphics\DisplayMode.cpp" />
+    <ClCompile Include="Graphics\GraphicsAdapter.cpp" />
+    <ClCompile Include="IO\MemoryStream.cpp" />
+    <ClCompile Include="IO\TextWriter.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="math\Color3.cpp" />
     <ClCompile Include="math\Color4.cpp" />
     <ClCompile Include="math\Vector2.cpp" />
     <ClCompile Include="math\Vector3.cpp" />
     <ClCompile Include="math\Vector4.cpp" />
+    <ClCompile Include="Networking\IPAddress.cpp" />
+    <ClCompile Include="Networking\IPEndPoint.cpp" />
+    <ClCompile Include="Networking\NetConfig.cpp" />
+    <ClCompile Include="Networking\Socket.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\IDisposable.h" />
     <ClInclude Include="core\TimeConstants.h" />
     <ClInclude Include="core\TimeSpan.h" />
     <ClInclude Include="core\TimeStamp.h" />
+    <ClInclude Include="Graphics\DisplayMode.h" />
+    <ClInclude Include="Graphics\GraphicsAdapter.h" />
     <ClInclude Include="IO\IStream.h" />
+    <ClInclude Include="IO\MemoryStream.h" />
+    <ClInclude Include="IO\TextWriter.h" />
     <ClInclude Include="math\Color3.h" />
     <ClInclude Include="math\Color4.h" />
     <ClInclude Include="math\Matrix3.h" />
@@ -99,6 +114,10 @@
     <ClInclude Include="math\Vector2.h" />
     <ClInclude Include="math\Vector3.h" />
     <ClInclude Include="math\Vector4.h" />
+    <ClInclude Include="Networking\IPAddress.h" />
+    <ClInclude Include="Networking\IPEndPoint.h" />
+    <ClInclude Include="Networking\NetConfig.h" />
+    <ClInclude Include="Networking\Socket.h" />
     <ClInclude Include="tekconfig.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

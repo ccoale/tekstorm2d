@@ -31,6 +31,12 @@
 	typedef float tekreal;
 #endif
 
+/// 
+/// Allows declaring of external resources.
+/// i.e. TEKHANDLE(SomeExternalHandleType, pDevice);
+///
+#define TEKHANDLE(a,b) void *b
+
 ///
 /// Standard include libraries
 ///
@@ -39,5 +45,44 @@
 #include <cmath>
 #include <memory>
 #include <stdint.h>
+#include <vector>
+
+namespace Tekstorm
+{
+	namespace Core
+	{
+	}
+
+	namespace Graphics
+	{
+	}
+
+	namespace IO
+	{
+		class TEKAPI IStream;
+		class TEKAPI MemoryStream;
+		class TEKAPI TextWriter;
+	}
+
+	namespace Math
+	{
+	}
+
+	namespace Networking
+	{
+		class TEKAPI IPAddress;
+		class TEKAPI IPEndPoint;
+		class TEKAPI NetworkStream;
+		class TEKAPI Socket;
+	}
+
+	namespace Physics
+	{
+	}
+
+	namespace Scripting
+	{
+	}
+}
 
 #endif /* _TEKSTORM_TEKCONFIG_H */

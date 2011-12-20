@@ -3,6 +3,8 @@
 
 namespace Tekstorm
 {
+	namespace Core
+	{
 		// Initializes a new instance of TimeStamp
 		TimeStamp::TimeStamp(__int64 stamp)
 		{
@@ -81,4 +83,5 @@ namespace Tekstorm
 		{
 			return TimeStamp(Raw - other.GetTicks());
 		}
+	}
 }

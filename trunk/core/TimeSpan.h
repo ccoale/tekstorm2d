@@ -4,6 +4,8 @@
 
 namespace Tekstorm
 {
+	namespace Core
+	{
 		// This class is used to store a span between two times. It is internally
 		// stored as ticks between the two times, but methods exist
 		// to obtain minutes, seconds, and milliseconds.
@@ -71,6 +73,7 @@ namespace Tekstorm
 			// Assigns this TimeSpan a new value.
 			TimeSpan& operator=(const TimeSpan& other);
 		};
+	}
 }
 
 #endif /* _TIMESPAN_H */
