@@ -19,6 +19,9 @@ namespace Tekstorm
 		class TEKAPI Color4
 		{
 		public:
+			__declspec(align(4))
+			struct
+			{
 			///
 			/// The Red-component of this color.
 			///
@@ -38,6 +41,7 @@ namespace Tekstorm
 			/// The Alpha-component of this color.
 			///
 			tekreal A;
+			};
 
 			///
 			/// Creates a new color with all components set to 0.

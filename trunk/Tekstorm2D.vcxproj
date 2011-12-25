@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -42,7 +42,7 @@
     <OutDir>.\Bin\$(Configuration)\</OutDir>
     <IntDir>.\Bin\$(Configuration)\Temp\</IntDir>
     <IncludePath>C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(ProjectDir)\Scripting\Squirrel\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -78,16 +78,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Debug.cpp" />
     <ClCompile Include="core\TimeConstants.cpp" />
     <ClCompile Include="core\TimeSpan.cpp" />
     <ClCompile Include="core\TimeStamp.cpp" />
+    <ClCompile Include="Graphics\ConstantBuffer.cpp" />
     <ClCompile Include="Graphics\DisplayMode.cpp" />
     <ClCompile Include="Graphics\GraphicsAdapter.cpp" />
+    <ClCompile Include="Graphics\GraphicsDevice.cpp" />
+    <ClCompile Include="Graphics\InputLayout.cpp" />
+    <ClCompile Include="Graphics\PixelShader.cpp" />
+    <ClCompile Include="Graphics\Texture.cpp" />
+    <ClCompile Include="Graphics\VertexBuffer.cpp" />
+    <ClCompile Include="Graphics\VertexShader.cpp" />
+    <ClCompile Include="Graphics\Viewport.cpp" />
+    <ClCompile Include="IO\ConsoleStream.cpp" />
     <ClCompile Include="IO\MemoryStream.cpp" />
     <ClCompile Include="IO\TextWriter.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="math\Color3.cpp" />
     <ClCompile Include="math\Color4.cpp" />
+    <ClCompile Include="Math\Matrix4.cpp" />
     <ClCompile Include="math\Vector2.cpp" />
     <ClCompile Include="math\Vector3.cpp" />
     <ClCompile Include="math\Vector4.cpp" />
@@ -95,14 +106,26 @@
     <ClCompile Include="Networking\IPEndPoint.cpp" />
     <ClCompile Include="Networking\NetConfig.cpp" />
     <ClCompile Include="Networking\Socket.cpp" />
+    <ClCompile Include="Scripting\tekscripting.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Debug.h" />
     <ClInclude Include="Core\IDisposable.h" />
+    <ClInclude Include="Core\IResource.h" />
     <ClInclude Include="core\TimeConstants.h" />
     <ClInclude Include="core\TimeSpan.h" />
     <ClInclude Include="core\TimeStamp.h" />
+    <ClInclude Include="Graphics\ConstantBuffer.h" />
     <ClInclude Include="Graphics\DisplayMode.h" />
     <ClInclude Include="Graphics\GraphicsAdapter.h" />
+    <ClInclude Include="Graphics\GraphicsDevice.h" />
+    <ClInclude Include="Graphics\InputLayout.h" />
+    <ClInclude Include="Graphics\PixelShader.h" />
+    <ClInclude Include="Graphics\Texture.h" />
+    <ClInclude Include="Graphics\VertexBuffer.h" />
+    <ClInclude Include="Graphics\VertexShader.h" />
+    <ClInclude Include="Graphics\Viewport.h" />
+    <ClInclude Include="IO\ConsoleStream.h" />
     <ClInclude Include="IO\IStream.h" />
     <ClInclude Include="IO\MemoryStream.h" />
     <ClInclude Include="IO\TextWriter.h" />
@@ -110,7 +133,6 @@
     <ClInclude Include="math\Color4.h" />
     <ClInclude Include="math\Matrix3.h" />
     <ClInclude Include="math\Matrix4.h" />
-    <ClInclude Include="math\Quaternion.h" />
     <ClInclude Include="math\Vector2.h" />
     <ClInclude Include="math\Vector3.h" />
     <ClInclude Include="math\Vector4.h" />
@@ -118,6 +140,31 @@
     <ClInclude Include="Networking\IPEndPoint.h" />
     <ClInclude Include="Networking\NetConfig.h" />
     <ClInclude Include="Networking\Socket.h" />
+    <ClInclude Include="scripting\squirrel\include\sqdbgserver.h" />
+    <ClInclude Include="scripting\squirrel\include\sqrdbg.h" />
+    <ClInclude Include="scripting\squirrel\include\sqstdaux.h" />
+    <ClInclude Include="scripting\squirrel\include\sqstdblob.h" />
+    <ClInclude Include="scripting\squirrel\include\sqstdio.h" />
+    <ClInclude Include="scripting\squirrel\include\sqstdmath.h" />
+    <ClInclude Include="scripting\squirrel\include\sqstdstring.h" />
+    <ClInclude Include="scripting\squirrel\include\sqstdsystem.h" />
+    <ClInclude Include="scripting\squirrel\include\squirrel.h" />
+    <ClInclude Include="scripting\squirrel\sqplus.h" />
+    <ClInclude Include="scripting\squirrel\SqPlusCallTemplates.h" />
+    <ClInclude Include="scripting\squirrel\SqPlusConst.h" />
+    <ClInclude Include="scripting\squirrel\SqPlusFunctionCallImpl.h" />
+    <ClInclude Include="scripting\squirrel\SqPlusOCharBuf.h" />
+    <ClInclude Include="scripting\squirrel\SqPlusOverload.h" />
+    <ClInclude Include="scripting\squirrel\SqPlusSetup.h" />
+    <ClInclude Include="scripting\squirrel\SqPlusSmartPointer.h" />
+    <ClInclude Include="scripting\squirrel\SqPlusTypeMask.h" />
+    <ClInclude Include="scripting\squirrel\SqPlusUtf8.h" />
+    <ClInclude Include="scripting\squirrel\sqplusWin32.h" />
+    <ClInclude Include="scripting\squirrel\SquirrelBindingsUtils.h" />
+    <ClInclude Include="scripting\squirrel\SquirrelBindingsUtilsWin32.h" />
+    <ClInclude Include="scripting\squirrel\SquirrelObject.h" />
+    <ClInclude Include="scripting\squirrel\SquirrelVM.h" />
+    <ClInclude Include="Scripting\tekscripting.h" />
     <ClInclude Include="tekconfig.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

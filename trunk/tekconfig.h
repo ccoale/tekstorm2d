@@ -46,15 +46,27 @@
 #include <memory>
 #include <stdint.h>
 #include <vector>
+#define WIN32_LEAN_AND_MEAN
+#include <Windows.h>
 
 namespace Tekstorm
 {
 	namespace Core
 	{
+		class IDisposable;
+		class IResource;
+		class TEKAPI Debug;
 	}
 
 	namespace Graphics
 	{
+		class TEKAPI GraphicsAdapter;
+		class TEKAPI GraphicsDevice;
+		class TEKAPI VertexShader;
+		class TEKAPI PixelShader;
+		class TEKAPI VertexBuffer;
+		class TEKAPI InputLayout;
+		class TEKAPI Texture;
 	}
 
 	namespace IO
@@ -66,6 +78,13 @@ namespace Tekstorm
 
 	namespace Math
 	{
+		class TEKAPI Color3;
+		class TEKAPI Color4;
+		class TEKAPI Matrix3;
+		class TEKAPI Matrix4;
+		class TEKAPI Vector2;
+		class TEKAPI Vector3;
+		class TEKAPI Vector4;
 	}
 
 	namespace Networking
@@ -84,5 +103,10 @@ namespace Tekstorm
 	{
 	}
 }
+
+#if defined(TEKSTORM_DEBUG)
+	#include "core/Debug.h"
+	using Tekstorm::Core::Debug;
+#endif
 
 #endif /* _TEKSTORM_TEKCONFIG_H */
