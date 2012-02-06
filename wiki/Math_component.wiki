@@ -1,5 +1,5 @@
 #summary This wiki page contains a description of the Math component of the Tekstorm2D Game Engine.
-#labels color4,vector2,vector3,vector4,color3,matrix3,matrix4,quaternion,math
+#labels color4,vector2,vector3,vector4,color3,matrix4,math
 
 = Introduction =
 The Math component, as you may have guessed, contains mathematical classes that help both the engine and the user of the engine build their game. The source to the math component can be found in the [http://code.google.com/p/tekstorm2d/source/browse/trunk/math tekstorm2d/math directory].
@@ -11,8 +11,6 @@ Below is a table of planned and completed features. If a feature is listed as be
 || [http://code.google.com/p/tekstorm2d/wiki/Vector2 Vector2] || A class that represents a 2-dimensional vector. || Yes ||
 || [http://code.google.com/p/tekstorm2d/wiki/Vector3 Vector3] || A class that represents a 3-dimensional vector. || Yes ||
 || [http://code.google.com/p/tekstorm2d/wiki/Vector4 Vector4] || A class that represents a 4-dimensional vector. || Yes ||
-|| [http://code.google.com/p/tekstorm2d/wiki/Matrix3 Matrix3] || A class that represents a 3x3 matrix. || No ||
-|| [http://code.google.com/p/tekstorm2d/wiki/Matrix4 Matrix4] || A class that represents a 4x4 matrix. || No ||
+|| [http://code.google.com/p/tekstorm2d/wiki/Matrix4 Matrix4] || A class that represents a 4x4 matrix. || Yes ||
 || [http://code.google.com/p/tekstorm2d/wiki/Color3 Color3] || A class that represents a 3-component color (Red, Green, Blue) || Yes ||
 || [http://code.google.com/p/tekstorm2d/wiki/Color4 Color4] || A class that represents a 4-component color (Red, Green, Blue, Alpha) || Yes ||
-|| Quaternion || A class that represents a quaternion. || No ||
