@@ -1,0 +1,37 @@
+# Introduction #
+
+Tekstorm2D is a cross-platform game engine, and as such, it has build scripts for multiple platforms. This article will explain how to obtain the source code (the easy way) and then build it **on Linux**. This has been tested and confirmed to work on Ubuntu 11.04.
+
+
+# Requirements #
+
+  * svn client
+  * g++ and make
+  * opengl libraries (gl, glu, glaux, freeglut)
+
+# Grabbing the source #
+First, before we can compile, we obviously have to grab the source. This can be done with SVN.
+
+```
+svn checkout http://tekstorm2d.googlecode.com/svn/trunk/ tekstorm2d
+```
+
+This should now create a "tesktorm2d" directory that contains the tekstorm2d source. Now we can build it.
+
+# Building #
+```
+cd tekstorm2d
+make
+```
+
+That's it! It should now create a so and a link library in the ./bin directory.
+
+The tekstorm2d makefile also contains targets for building only core components:
+```
+make net
+make scripting
+make math
+make graphics
+make audio
+etc..
+```
